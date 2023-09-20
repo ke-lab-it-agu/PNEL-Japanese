@@ -3,21 +3,15 @@
 
 ## usage
 
-```
-$git clone https://github.com/debayan/pnel.git
-$pip install -r requirements.txt
-```
+以下python3.7環境を想定しています。
 
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
+```
+(pnel-ja)$ git clone https://github.com/ke-lab-it-agu/PNEL-Japanese.git
+(pnel-ja)$ pip install -r requirements.txt
 ```
 
-### PNEL
 
-### PNEL for Japanese
 
-### experiments
+## experiments
 
-#### experiment 1
+### experiment
