@@ -3,10 +3,10 @@
 
 ## usage
 
-'''
+```
 $git clone https://github.com/debayan/pnel.git
 $pip install -r requirements.txt
-'''
+```
 ### PNEL
 
 ### PNEL for Japanese
