@@ -1,13 +1,12 @@
 # PNEL-Japanese
-PNEL for Japanese
-
-## overview
 ![PNEL](PNEL1.png)
 
-## PNEL
+## usage
 
+### PNEL
 
-## PNEL for Japanese
+### PNEL for Japanese
 
+### experiments
 
-## experiments
+#### experiment 1
