@@ -20,6 +20,7 @@ create indices and mappings as specified in deploy/data/esdumps/mappings.json
 (pnel-ja)$ gunzip wikidata_translation_v1.tsv.gz
 (pnel-ja)$ python loadwikiembeds.py
 ```
+
 ### start the server
 ・fastText
 ```
@@ -41,19 +42,27 @@ create indices and mappings as specified in deploy/data/esdumps/mappings.json
 (pnel-ja)$ wget xxx
 (pnel-ja)$ python TextMatchServer_WikiEntVec.py 8887
 ```
+
 ### vectorize
 ```
-(pnel-ja)$ 
-(pnel-ja)$ 
+(pnel-ja)$ cd vectorise
+(pnel-ja)$ python preparedatangramtextmatchdesc.py datasets/japanese_train_translate.json webqtrain webqtrainvectors.txt
+(pnel-ja)$ python preparedatangramtextmatchdesc.py datasets/japanese_test_translate.json webqtest webqtestvectors.txt
+(pnel-ja)$ mkdir webqtrainchunks
+(pnel-ja)$ cd webqtrainchunks
+(pnel-ja)$ split -l 10 ../webqtrainvectors.txt webqchunk
 ```
+
 ### training
 ```
-(pnel-ja)$ 
-(pnel-ja)$ 
+(pnel-ja)$ cd train
+(pnel-ja)$ CUDA_VISIBLE_DEVICES=0 python -u train.py --data_path ../vectorise/webqtrainchunks/ --test_data_path ../vectorise/webqtestchunks.txt --models_dir ./models/webqmodels/
 ```
+
 ### evaluation
 ```
+(pnel-ja)$ cd eval/webqsp
 (pnel-ja)$ python parse.py
 (pnel-ja)$ python judge.py
 ```
-### pre-trained model
+
