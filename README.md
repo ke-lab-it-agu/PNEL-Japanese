@@ -15,6 +15,7 @@ pip install
 ```
 
 create indices and mappings as specified in deploy/data/esdumps/mappings.json
+
 wikidataの各種情報はxxxからダウンロードできます
 ```
 (pnel-ja)$ elasticdump --limit=10000 --input=japanese_description.json --output=http://localhost:9200/wikidataentitydescriptionsindex01 --type=data
