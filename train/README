@@ -1,0 +1,3 @@
+LD_LIBRARY_PATH=/data/lukovnik/miniconda2/pkgs/cudnn-7.1.2-cuda9.0_0/lib/:/data/lukovnik/miniconda2/pkgs/cudatoo
+lkit-10.0.130-0/lib/:/data/lukovnik/miniconda2/envs/dev/lib/ CUDA_VISIBLE_DEVICES=1 python -u train.py --data_path ../datasets/webqchunks1142/ --test_data_path ../datasets/webqtextmatchtestdesc.txt --mod
+els_dir ../models/webqmodelnodesc10epochs/
