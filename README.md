@@ -26,6 +26,7 @@ wikidataの各種情報はxxxからダウンロードできます
 
 ### start the server
 使用したい言語モデルによってそれぞれ以下のようにローカルサーバーを立ち上げます
+
 ・fastText
 ```
 (pnel-ja)$ wget xxx
