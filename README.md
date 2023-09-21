@@ -3,6 +3,7 @@
 
 ## usage
 基本的に[pnel](https://github.com/debayan/pnel)を参考にmodelを構築しています
+
 以下python3.7環境を想定しています
 
 
@@ -12,6 +13,7 @@ pip install
 (pnel-ja)$ git clone https://github.com/ke-lab-it-agu/PNEL-Japanese.git
 (pnel-ja)$ pip install -r requirements.txt
 ```
+
 create indices and mappings as specified in deploy/data/esdumps/mappings.json
 wikidataの各種情報はxxxからダウンロードできます
 ```
@@ -22,7 +24,6 @@ wikidataの各種情報はxxxからダウンロードできます
 (pnel-ja)$ gunzip wikidata_translation_v1.tsv.gz
 (pnel-ja)$ python loadwikiembeds.py
 ```
-
 
 ### start the server
 使用したい言語モデルによってそれぞれ以下のようにローカルサーバーを立ち上げます
@@ -48,7 +49,6 @@ wikidataの各種情報はxxxからダウンロードできます
 (pnel-ja)$ python TextMatchServer_WikiEntVec.py 8887
 ```
 
-
 ### vectorize
 モデルの訓練を行うにあたって、あらかじめ必要な埋め込みを獲得します
 ```
@@ -60,14 +60,12 @@ wikidataの各種情報はxxxからダウンロードできます
 (pnel-ja)$ split -l 10 ../webqtrainvectors.txt webqchunk
 ```
 
-
 ### training
 獲得した埋め込みを使用してモデルを訓練します
 ```
 (pnel-ja)$ cd train
 (pnel-ja)$ CUDA_VISIBLE_DEVICES=0 python -u train.py --data_path ../vectorise/webqtrainchunks/ --test_data_path ../vectorise/webqtestchunks.txt --models_dir ./models/webqmodels/
 ```
-
 
 ### evaluation
 構築したモデルの評価を行います
