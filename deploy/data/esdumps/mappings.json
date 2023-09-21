@@ -1,0 +1,76 @@
+curl -X PUT "localhost:9200/wikidataembedsindex01" -H 'Content-Type: application/json' -d'
+{
+       
+                "mappings": {
+                        "properties": {
+                                "embedding": {
+                                        "type": "text",
+                                        "index": false
+                                },
+                                "key": {
+                                        "type": "keyword"
+                                }
+                        }
+                },
+                "settings": {
+                    "number_of_shards" : 5,
+                        "number_of_replicas": 0
+                }
+        
+}
+'
+
+curl -X PUT "localhost:9200/wikidataentitylabelindex01" -H 'Content-Type: application/json' -d'
+{
+        
+                "settings": {
+                        "number_of_replicas": 0,
+                        "number_of_shards": 5
+                },
+                "mappings": {
+                        "properties": {
+                                "uri": {
+                                        "type": "keyword"
+                                },
+                                "wikidataLabel": {
+                                        "type": "text",
+                                        "index_options": "docs",
+                                        "analyzer": "english"
+                                }
+                        }
+                }
+        
+}
+
+curl -X PUT "localhost:9200/wikidataentitydescriptionsindex01" -H 'Content-Type: application/json' -d'
+{
+       
+                "settings": {
+                        "number_of_replicas": 0,
+                        "number_of_shards": 5
+                },
+                "mappings": {
+                        "properties": {
+                                "description": {
+                                        "type": "text",
+                                        "fields": {
+                                                "keyword": {
+                                                        "type": "keyword",
+                                                        "ignore_above": 256
+                                                }
+                                        }
+                                },
+                                "entityid": {
+                                        "type": "text",
+                                        "fields": {
+                                                "keyword": {
+                                                        "type": "keyword",
+                                                        "ignore_above": 256
+                                                }
+                                        }
+                                }
+                        }
+                }
+        
+}
+
