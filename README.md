@@ -2,9 +2,9 @@
 ![PNEL](PNEL1.png)
 
 ## usage
-基本的に[pnel](https://github.com/debayan/pnel)を参考にmodelを構築しています
+PNEL-Japanese is built on the basis of [pnel](https://github.com/debayan/pnel)
 
-以下python3.7環境を想定しています
+We assume python 3.7 environment.
 
 
 ### setup
@@ -14,9 +14,9 @@ pip install
 (pnel-ja)$ pip install -r requirements.txt
 ```
 
-create indices and mappings as specified in deploy/data/esdumps/mappings.json
+Create indices and mappings as specified in deploy/data/esdumps/mappings.json.
 
-wikidataの各種情報はxxxからダウンロードできます
+Wikidata information can be downloaded from [xxx]()
 ```
 (pnel-ja)$ elasticdump --limit=10000 --input=japanese_description.json --output=http://localhost:9200/wikidataentitydescriptionsindex01 --type=data
 (pnel-ja)$ elasticdump --limit=10000 --input=japanese_label.json --output=http://localhost:9200/wikidataentitylabelindex01 --type=data
@@ -27,7 +27,9 @@ wikidataの各種情報はxxxからダウンロードできます
 ```
 
 ### start the server
-使用したい言語モデルによってそれぞれ以下のようにローカルサーバーを立ち上げます
+Set up a local server.
+
+It depends on the language model you want to use.
 
 ・fastText
 ```
@@ -51,7 +53,7 @@ wikidataの各種情報はxxxからダウンロードできます
 ```
 
 ### vectorize
-モデルの訓練を行うにあたって、あらかじめ必要な埋め込みを獲得します
+Get the embeddings you need.
 ```
 (pnel-ja)$ cd vectorise
 (pnel-ja)$ python preparedatangramtextmatchdesc.py datasets/japanese_train_translate.json webqtrain webqtrainvectors.txt
@@ -62,14 +64,12 @@ wikidataの各種情報はxxxからダウンロードできます
 ```
 
 ### training
-獲得した埋め込みを使用してモデルを訓練します
 ```
 (pnel-ja)$ cd train
 (pnel-ja)$ CUDA_VISIBLE_DEVICES=0 python -u train.py --data_path ../vectorise/webqtrainchunks/ --test_data_path ../vectorise/webqtestchunks.txt --models_dir ./models/webqmodels/
 ```
 
 ### evaluation
-構築したモデルの評価を行います
 ```
 (pnel-ja)$ cd eval/webqsp
 (pnel-ja)$ python parse.py
