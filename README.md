@@ -3,6 +3,7 @@
 
 ## usage
 PNEL-Japanese is built on the basis of [pnel](https://github.com/debayan/pnel).
+
 We assume python 3.7 environment.
 
 ### setup
@@ -25,6 +26,7 @@ Wikidata information can be downloaded from [xxx](https://drive.google.com/drive
 
 ### start the server
 Set up a local server.
+
 It depends on the language model you want to use.
 
 ・fastText
