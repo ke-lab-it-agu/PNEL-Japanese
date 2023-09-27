@@ -19,8 +19,8 @@ Create indices and mappings as specified in deploy/data/esdumps/mappings.json.
 
 Wikidata information can be downloaded from [here](https://drive.google.com/drive/folders/1jpsypPoQzXioaDgerK-E3fLlLHtshtXP?usp=drive_link).
 ```
-(pnel-ja)$ elasticdump --limit=10000 --input=japanese_description.json --output=http://localhost:9200/wikidataentitydescriptionsindex01 --type=data
-(pnel-ja)$ elasticdump --limit=10000 --input=japanese_label.json --output=http://localhost:9200/wikidataentitylabelindex01 --type=data
+(pnel-ja)$ elasticdump --limit=10000 --input=japanese_description.json --output=http://localhost:9200/wikidataentitydescriptionsindex03 --type=data
+(pnel-ja)$ elasticdump --limit=10000 --input=japanese_label.json --output=http://localhost:9200/wikidataentitylabelindex03 --type=data
 (pnel-ja)$ cd deploy/data
 (pnel-ja)$ wget https://dl.fbaipublicfiles.com/torchbiggraph/wikidata_translation_v1.tsv.gz
 (pnel-ja)$ gunzip wikidata_translation_v1.tsv.gz
