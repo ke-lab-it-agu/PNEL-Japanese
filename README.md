@@ -9,11 +9,20 @@ We assume python 3.7 environment.
 ### setup
 pip install
 ```
-(pnel-ja)$ git clone https://github.com/ke-lab-it-agu/PNEL-Japanese.git
-(pnel-ja)$ pip install -r requirements.txt
+(pnel-ja)$ git clone https://github.com/ke-lab-it-agu/PNEL-Japanese.git && cd PNEL-Japanese
+(pnel-ja)$ mkdir envs && cd envs
+(pnel-ja)$ python3.7 -m venv pnel-ja
+(pnel-ja)$ source pnel-ja/bin/activate
+(pnel-ja)$ cd ../ && pip install -r requirements.txt
 ```
 Create indices and mappings as specified in deploy/data/esdumps/mappings.json.
-
+```
+(pnel-ja)$ git clone https://github.com/ke-lab-it-agu/PNEL-Japanese.git && cd PNEL-Japanese
+(pnel-ja)$ mkdir envs && cd envs
+(pnel-ja)$ python3.7 -m venv pnel-ja
+(pnel-ja)$ source pnel-ja/bin/activate
+(pnel-ja)$ cd ../ && pip install -r requirements.txt
+```
 Wikidata information can be downloaded from [xxx](https://drive.google.com/drive/folders/1jpsypPoQzXioaDgerK-E3fLlLHtshtXP?usp=drive_link).
 ```
 (pnel-ja)$ elasticdump --limit=10000 --input=japanese_description.json --output=http://localhost:9200/wikidataentitydescriptionsindex01 --type=data
