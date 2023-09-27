@@ -24,7 +24,7 @@ Wikidata information can be downloaded from [here](https://drive.google.com/driv
 (pnel-ja)$ cd deploy/data
 (pnel-ja)$ wget https://dl.fbaipublicfiles.com/torchbiggraph/wikidata_translation_v1.tsv.gz
 (pnel-ja)$ gunzip wikidata_translation_v1.tsv.gz
-(pnel-ja)$ python loadwikiembeds.py
+(pnel-ja)$ cd ../utils && python loadwikiembeds.py
 ```
 
 ### start the server
