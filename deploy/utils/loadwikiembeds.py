@@ -5,7 +5,7 @@ from elasticsearch import helpers
 doccount = 0
 actions = []
 es = Elasticsearch("http://localhost:9200")
-with open("../data/wikidata_translation_v1.tsv") as infile:
+with open("../wikidata_translation_v1.tsv") as infile:
     for line in infile:
         items = line.strip().split(' ')
         key = items[0]
