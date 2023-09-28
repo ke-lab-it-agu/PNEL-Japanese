@@ -9,10 +9,10 @@ We assume python 3.7 environment.
 ### setup
 pip install
 ```
-(pnel-ja)$ git clone https://github.com/ke-lab-it-agu/PNEL-Japanese.git && cd PNEL-Japanese
-(pnel-ja)$ mkdir envs && cd envs
-(pnel-ja)$ python3.7 -m venv pnel-ja
-(pnel-ja)$ source pnel-ja/bin/activate
+$ git clone https://github.com/ke-lab-it-agu/PNEL-Japanese.git && cd PNEL-Japanese
+$ mkdir envs && cd envs
+$ python3.7 -m venv pnel-ja
+$ source pnel-ja/bin/activate
 (pnel-ja)$ cd ../ && pip install -r requirements.txt
 ```
 Create indices and mappings as specified in deploy/data/esdumps/mappings.json.
