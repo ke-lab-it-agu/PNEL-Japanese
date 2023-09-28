@@ -36,25 +36,25 @@ It depends on the language model you want to use.
 ```
 (pnel-ja)$ cd deploy && wget https://dl.fbaipublicfiles.com/fasttext/vectors-crawl/cc.ja.300.vec.gz
 (pnel-ja)$ gunzip cc.ja.300.vec.gz
-(pnel-ja)$ python TextMatchServer_fastText.py 8887
+(pnel-ja)$ python fastText_TextMatchServer.py 8887
 ```
 ・Wikipedia2Vec
 ```
 (pnel-ja)$ cd deploy && wget http://wikipedia2vec.s3.amazonaws.com/models/ja/2018-04-20/jawiki_20180420_300d.txt.bz2
 (pnel-ja)$ bunzip2 jawiki_20180420_300d.txt.bz2
-(pnel-ja)$ python TextMatchServer_Wikipedia2Vec.py 8887
+(pnel-ja)$ python Wikipedia2Vec_TextMatchServer.py 8887
 ```
 ・chive
 ```
 (pnel-ja)$ cd deploy && wget https://sudachi.s3-ap-northeast-1.amazonaws.com/chive/chive-1.2-mc5.tar.gz
 (pnel-ja)$ gunzip chive-1.2-mc5.tar.gz
-(pnel-ja)$ python TextMatchServe_chiver.py 8887
+(pnel-ja)$ python chive_TextMatchServer.py 8887
 ```
 ・WikiEntVec
 ```
 (pnel-ja)$ cd deploy && wget https://github.com/singletongue/WikiEntVec/releases/download/20190520/jawiki.all_vectors.300d.txt.bz2
 (pnel-ja)$ bunzip2 jawiki.all_vectors.300d.txt.bz2
-(pnel-ja)$ python TextMatchServer_WikiEntVec.py 8887
+(pnel-ja)$ python WikiEntVec_TextMatchServer.py 8887
 ```
 
 ### vectorize
