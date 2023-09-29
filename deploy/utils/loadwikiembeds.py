@@ -7,7 +7,7 @@ actions = []
 es = Elasticsearch("http://localhost:9200")
 with open("../wikidata_translation_v1.tsv") as infile:
     for line in infile:
-        items = line.strip().split(' ')
+        items = line.strip().split('\t')
         key = items[0]
         vector = items[1:]
         if '/Q' in key or '/P' in key or '@ja' in key:
