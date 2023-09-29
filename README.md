@@ -76,6 +76,7 @@ Get the embeddings you need.
 
 ### evaluation
 ```
+(pnel-ja)$ python api.py --port 4444 --modeldir ../train/models/webqmodels/ --layers 1 --rnnsize 512 --attentionsize 128
 (pnel-ja)$ cd eval/webqsp
 (pnel-ja)$ python parse.py
 (pnel-ja)$ python judge.py
