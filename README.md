@@ -71,7 +71,7 @@ Get the embeddings you need.
 ### training
 ```
 (pnel-ja)$ cd train
-(pnel-ja)$ CUDA_VISIBLE_DEVICES=0 python -u train.py --data_path ../vectorise/webqtrainchunks/ --test_data_path ../vectorise/webqtestchunks.txt --models_dir ./models/webqmodels/
+(pnel-ja)$ CUDA_VISIBLE_DEVICES=0 python -u train.py --data_path ../vectorise/webqtrainchunks/ --test_data_path ../vectorise/webqtestvectors.txt --models_dir ./models/webqmodels/
 ```
 
 ### evaluation
