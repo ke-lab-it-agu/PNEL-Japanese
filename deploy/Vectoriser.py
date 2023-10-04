@@ -21,7 +21,7 @@ def getembedding(enturl):
     if enturl in entembedcache:
         return entembedcache[enturl]
     entityurl = '<http://www.wikidata.org/entity/'+enturl[37:]+'>'
-    res = es.search(index="all_transe_200", body={"query":{"term":{"key":{"value":entityurl}}}})
+    res = es.search(index="wikidataentitydescriptionsindex03", body={"query":{"term":{"key":{"value":entityurl}}}})
     try:
         embedding = [float(x) for x in res['hits']['hits'][0]['_source']['embedding']]
         entembedcache[enturl] = embedding
