@@ -22,6 +22,7 @@ def mean(a):
 # 英語
 # from textblob import TextBlob
 # postags = ["CC","CD","DT","EX","FW","IN","JJ","JJR","JJS","LS","MD","NN","NNS","NNP","NNPS","PDT","POS","PRP","PRP$","RB","RBR","RBS","RP","SYM","TO","UH","VB","VBD","VBG","VBN","VBP","VBZ","WDT","WP","WP$","WRB"]
+
 # 日本語
 from spacy.lang.ja import Japanese
 postags = ["ADJ","ADP","ADV","AUX","CCONJ","DET","INTJ","NOUN","NUM","PART","PRON","PROPN","PUNCT","SCONJ","SYM","VERB","","X"]
@@ -29,6 +30,7 @@ postags = ["ADJ","ADP","ADV","AUX","CCONJ","DET","INTJ","NOUN","NUM","PART","PRO
 es = Elasticsearch(port=9200)
 
 writef = open(sys.argv[3], 'w') 
+
 
 def getdescription(entid):
     res = es.search(index="wikidataentitydescriptionsindex03", body={"query":{"term":{"entityid.keyword":entid}}})
@@ -42,6 +44,7 @@ def getdescription(entid):
         print('getdescr error: ',e)
         return ''
 cache = {}
+
 
 def gettextembedding(text):
     if text in cache:
@@ -57,6 +60,7 @@ def gettextembedding(text):
         return [0]*200
     return [0]*200
 
+
 def getembedding(enturl):
     entityurl = '<http://www.wikidata.org/entity/'+enturl[37:]+'>'
     res = es.search(index="wikidataembedsindex03", body={"query":{"term":{"key":{"value":entityurl}}}})
@@ -67,6 +71,7 @@ def getembedding(enturl):
         print(enturl,' not found')
         return None
     return None
+
 
 def gettextmatchmetric(label,word):
     return [fuzz.ratio(label,word)/100.0,fuzz.partial_ratio(label,word)/100.0,fuzz.token_sort_ratio(label,word)/100.0] 
